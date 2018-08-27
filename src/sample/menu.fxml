@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+    <MenuBar fx:id="menuBar" onKeyPressed="#handleKeyInput" prefWidth="520.0">
+        <menus>
+            <Menu text="Project">
+                <items>
+                    <SeparatorMenuItem />
+                    <MenuItem onAction="#exit" text="Exit" />
+                </items>
+            </Menu>
+            <Menu text="Actions">
+                <items>
+                    <MenuItem onAction="#cleanOutput" text="Clean screen" />
+                    <MenuItem onAction="#getAccessToken" text="Get access token" />
+                    <MenuItem onAction="#createUser" text="Create user" />
+                    <MenuItem onAction="#createConnection" text="Get access token" />
+                    <MenuItem onAction="#initiatePayment" text="Initiate payment" />
+                </items>
+            </Menu>
+            <Menu text="Help">
+                <items>
+                    <MenuItem onAction="#getVersion" text="Version" />
+                    <SeparatorMenuItem />
+                    <MenuItem onAction="#handleAboutAction" text="About" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

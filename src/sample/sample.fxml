@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="520.0">
+         <children>
+            <fx:include fx:id="menufxml" source="menu.fxml" />
+            <TextArea fx:id="output" editable="false" layoutX="9.0" layoutY="34.0" prefHeight="187.0" prefWidth="495.0" wrapText="true" />
+            <TabPane layoutX="8.0" layoutY="228.0" prefHeight="420.0" prefWidth="495.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Urls">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                                 <Label layoutX="72.0" layoutY="86.0" text="Application" />
+                              <TextField fx:id="urlApp" layoutX="143.0" layoutY="83.0" prefHeight="25.0" prefWidth="334.0" promptText="url" />
+                              <TextField fx:id="urlAuth" layoutX="143.0" layoutY="47.0" prefHeight="25.0" prefWidth="334.0" promptText="url" />
+                              <TextField fx:id="urlApi" layoutX="143.0" layoutY="11.0" prefHeight="25.0" prefWidth="335.0" promptText="url" />
+                              <Label layoutX="11.0" layoutY="15.0" text="Authentification server " />
+                              <Label layoutX="114.0" layoutY="51.0" text="API" />
+                              <Button layoutX="144.0" layoutY="120.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Validate" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="User">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="111.0" prefWidth="495.0">
+                           <children>
+                              <TextField fx:id="userIdentifier" layoutX="11.0" layoutY="11.0" prefHeight="25.0" prefWidth="209.0" promptText="Identifier" />
+                              <TextField fx:id="userPassword" layoutX="12.0" layoutY="46.0" prefHeight="25.0" prefWidth="208.0" promptText="Password" />
+                              <Button fx:id="createUser" layoutX="248.0" layoutY="11.0" mnemonicParsing="false" onAction="#createUser" prefHeight="25.0" prefWidth="93.0" text="Create user" />
+                              <Button fx:id="deleteUser" layoutX="248.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Delete user" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Payments">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="287.0" prefWidth="495.0">
+                           <children>
+                              <ComboBox fx:id="source" layoutX="66.0" layoutY="11.0" prefHeight="25.0" prefWidth="200.0" />
+                              <ComboBox fx:id="destination" layoutX="66.0" layoutY="48.0" prefHeight="25.0" prefWidth="200.0" />
+                              <Button fx:id="initiatePayment" layoutX="16.0" layoutY="160.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Initiate payment" />
+                              <Label layoutX="20.0" layoutY="13.0" text="Source" />
+                              <Label layoutX="19.0" layoutY="51.0" text="Dest." />
+                              <TextField fx:id="amount" layoutX="17.0" layoutY="85.0" prefHeight="25.0" prefWidth="100.0" promptText="Amount" />
+                              <TextField fx:id="currency" layoutX="128.0" layoutY="85.0" prefHeight="25.0" prefWidth="65.0" promptText="Currency" />
+                              <TextField fx:id="label" layoutX="16.0" layoutY="123.0" prefHeight="25.0" prefWidth="461.0" promptText="Label" />
+                              <TableView fx:id="payments" layoutY="197.0" prefHeight="187.0" prefWidth="495.0" tableMenuButtonVisible="true">
+                                <columns>
+                                  <TableColumn prefWidth="60.0" text="Date">
+                                    <cellValueFactory>
+                                          <PropertyValueFactory property="date" />
+                                       </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="115.0" text="Source">
+                                    <cellValueFactory>
+                                          <PropertyValueFactory property="source" />
+                                       </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="115.0" text="Dest.">
+                                    <cellValueFactory>
+                                          <PropertyValueFactory property="destination" />
+                                       </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="60.0" text="Amount">
+                                    <cellValueFactory>
+                                          <PropertyValueFactory property="amount" />
+                                       </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="65.0" text="Status">
+                                    <cellValueFactory>
+                                          <PropertyValueFactory property="status" />
+                                       </cellValueFactory>
+                                  </TableColumn>
+                                  <TableColumn prefWidth="65.0" text="Reason">
+                                    <cellValueFactory>
+                                          <PropertyValueFactory property="reason" />
+                                       </cellValueFactory>
+                                  </TableColumn>
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
